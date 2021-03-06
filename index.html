@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+ <!-- moved to allow script to run before DOM -->
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="card">
+        <header>
+        <h1><b>Password Generator</b></h1>
+        </header>
+        <!--Removed header because of redundancy of "Password Generator" and "Generate a Password"-->
+        <!-- <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div> -->
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <form>
+          <h3><u>Choose Password Details</u></h3>
+          <div class="formdetails">
+            <label><strong>Number of Characters (minimum: 8, maximum: 128)</strong></label>
+            <input type="number" min="8" max="128"value="8" id="charbox">
+          </div>
+          <div class="formdetails">
+            <label><strong>Uppercase</strong></label>
+            <input class="boxes" onclick="checkUpper()" type="checkbox" id="upper">
+          </div>
+          <div class="formdetails">
+            <label><strong>Lowercase</strong></label>
+            <input class="boxes" onclick="checkLower()" type="checkbox" id="lower">
+          </div>  
+          <div class="formdetails">
+            <label><strong>Numbers</strong></label> 
+            <input class="boxes" onclick="checkNumber()" type="checkbox" id="number">
+          </div>  
+          <div class="formdetails">
+            <label><strong>Special Characters</strong></label>
+            <input class="boxes" onclick="checkSpecial()" type="checkbox" id="special">
+          </div>  
+        </form>
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Password</button>
+          <!--added additional functionality - Generate New button for user to be able to quickly refresh page-->
+          <button id="newpass" class="btn">Generate New</button> 
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script> 
+    <!-- <script src="add_to_page.js"></script> -------- /* Removed as it isn't needed */ -->
+  </body>
+</html>
